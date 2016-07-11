@@ -16,12 +16,12 @@ NEWSPIDER_MODULE = 'app.spiders'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'app (+http://www.yourdomain.com)'
 
-ITEM_PIPELINES = [
-  'scrapy_mongodb.MongoDBPipeline',
-]
+# ITEM_PIPELINES = [
+#   'scrapy_mongodb.MongoDBPipeline',
+# ]
 
-MONGODB_URI = 'mongodb://127.0.0.1:27017'
-MONGODB_DATABASE = 'scrapy'
-MONGODB_COLLECTION = 'test1'
+# MONGODB_URI = 'mongodb://127.0.0.1:27017'
+# MONGODB_DATABASE = 'scrapy'
+# MONGODB_COLLECTION = 'test1'
 
-EXTENSIONS = {'scrapy.contrib.feedexport.FeedExporter': None}
+# EXTENSIONS = {'scrapy.contrib.feedexport.FeedExporter': None}

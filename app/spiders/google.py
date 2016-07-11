@@ -24,4 +24,5 @@ class GoogleSpider(CrawlSpider):
     	item = GoogleItem()
     	item['url'] = response.url
     	item['num'] =  response.xpath("//div[@itemprop='numDownloads']").xpath("text()").extract()
+        print item['url'], '----->', item['num']
     	yield item 

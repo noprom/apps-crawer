@@ -6,18 +6,18 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.contrib.linkextractors import LinkExtractor
 from app.items import AppItem
 
-class BaiduSpider(CrawlSpider):
+class BaiduSpider(scrapy.Spider):
     name = "baidu"
     allowed_domains = ["baidu.com"]
     start_urls = (
         'http://shouji.baidu.com/software/?from=as',
     )
     rules = [
-        Rule(LinkExtractor(allow=("http://shouji.baidu.com/soft/item", )), callback='parse_app',follow=True),
+        Rule(LinkExtractor(allow=("http://shouji.baidu.com/soft/item", )), callback='parse',follow=True),
     ]
 
 
-    def parse_app(self, response):
+    def parse(self, response):
     	apk = AppItem()
         apk['url']  = response.url
         apk['name'] = response.css('.app-name>span').extract()[0]

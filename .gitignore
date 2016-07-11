@@ -1,6 +1,6 @@
 
 #********** python template********** 
-
+.idea
 *.py[cod]
 
 # C extensions
