@@ -27,7 +27,7 @@ class JsonWithEncodingHiApkPipeline(object):
     def spider_closed(self, spider):
         self.file.close()
 
-class JsonWriterPipeline(object):
+class XiaomiJsonWriterPipeline(object):
 
     def __init__(self):
         self.file = codecs.open('items.json', 'w', encoding='utf-8')

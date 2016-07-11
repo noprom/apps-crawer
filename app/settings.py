@@ -31,6 +31,7 @@ NEWSPIDER_MODULE = 'app.spiders'
 
 # 保存到文件配置
 ITEM_PIPELINES = {
-    'app.pipelines.JsonWithEncodingHiApkPipeline': 500,
+    'app.pipelines.XiaomiJsonWriterPipeline': 500,
+    'app.pipelines.JsonWithEncodingHiApkPipeline': 800,
 }
 LOG_LEVEL = 'INFO'

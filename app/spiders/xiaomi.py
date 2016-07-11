@@ -42,20 +42,20 @@ class XiaomiSpider(scrapy.Spider):
         'http://app.xiaomi.com/category/28',
         'http://app.xiaomi.com/category/29',
         'http://app.xiaomi.com/category/30',
-        'http://app.xiaomi.com/category/5#page=1'
-        # 'http://app.xiaomi.com/details?id=com.jxch.lianjiangquan'
+        'http://app.xiaomi.com/category/5#page=1',
+        'http://app.xiaomi.com/details?id=com.jxch.lianjiangquan'
     )
 
     rules = (
+        Rule(LinkExtractor(allow=("http://app\.xiaomi\.com/details?id=.+", )), callback='parse_app',follow=True),
         # Rule(LinkExtractor(allow=("http://app\.xiaomi\.com/", )), callback='parse',follow=True),
         # Rule(LinkExtractor(allow=("http://app\.xiaomi\.com/category/", )), callback='parse',follow=True),
         # Rule(LinkExtractor(allow=("http://app\.xiaomi\.com/category/\d+#page=\d+", )), callback='parse',follow=True),
-        Rule(LinkExtractor(allow=("http://app\.xiaomi\.com/details?id=.+", )), callback='parse_app',follow=True),
     ) #  CrawlSpider 会根据 rules 规则爬取页面并调用函数进行处理
 
-    def parse(self, response):
-        item = XiaomiItem()
-        yield item
+    # def parse(self, response):
+    #     item = XiaomiItem()
+    #     yield item
 
     def parse_app(self, response):
         item = XiaomiItem()
