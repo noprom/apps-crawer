@@ -48,7 +48,7 @@ class XiaomiSpider(scrapy.Spider):
     )
 
     rules = (
-        Rule(LinkExtractor(allow=("http://app\.xiaomi\.com/details", )), callback='parse',follow=True),
+        Rule(LinkExtractor(allow=("/details?id=", )), callback='parse',follow=True),
         Rule(LinkExtractor(allow=("http://app\.xiaomi\.com/", )), callback='parse',follow=True),
         Rule(LinkExtractor(allow=("http://app\.xiaomi\.com/category/", )), callback='parse',follow=True),
         Rule(LinkExtractor(allow=("http://app\.xiaomi\.com/category/\d+#page=\d+", )), callback='parse',follow=True),
