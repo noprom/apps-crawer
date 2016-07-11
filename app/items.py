@@ -7,12 +7,19 @@
 
 import scrapy
 
-
 class AppItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    apk_url  = scrapy.Field()
+    name     = scrapy.Field()
+    rate     = scrapy.Field()
+    category = scrapy.Field()
+    size     = scrapy.Field()
+    url      = scrapy.Field()
+    screenshots  = scrapy.Field()
+    download_num = scrapy.Field()
 
 class GoogleItem(scrapy.Item):
- 	url = scrapy.Field()
- 	num = scrapy.Field()
+    url = scrapy.Field()
+    app_name = scrapy.Field()
+    developer = scrapy.Field()
+    package = scrapy.Field()
+    category = scrapy.Field()
