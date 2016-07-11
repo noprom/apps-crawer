@@ -10,15 +10,15 @@ class BaiduSpider(scrapy.Spider):
     name = "baidu"
     allowed_domains = ["baidu.com"]
     start_urls = (
-        'http://shouji.baidu.com/software/?from=as',
+         'http://shouji.baidu.com/software/?from=as',
     )
-    rules = [
-        Rule(LinkExtractor(allow=("http://shouji.baidu.com/soft/item", )), callback='parse',follow=True),
-    ]
 
+    rules = (
+        Rule(LinkExtractor(allow=("http://shouji.baidu.com/software/?from=as", )), callback='parse',follow=True),
+    )
 
     def parse(self, response):
-    	apk = AppItem()
+        apk = AppItem()
         apk['url']  = response.url
         apk['name'] = response.css('.app-name>span').extract()[0]
         apk['rate'] = response.css(".star-percent").xpath("@style").extract()[0]
@@ -27,4 +27,4 @@ class BaiduSpider(scrapy.Spider):
         apk['apk_url']  = response.css(".apk").xpath("@href").extract()[0]
         apk['screenshots']  = response.css(".imagefix").xpath("@src").extract()
         apk['download_num'] = response.css("span.download-num").xpath("text()").extract()[0]
-    	yield apk
+        yield apk

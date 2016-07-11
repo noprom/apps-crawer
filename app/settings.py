@@ -20,8 +20,12 @@ NEWSPIDER_MODULE = 'app.spiders'
 #   'scrapy_mongodb.MongoDBPipeline',
 # ]
 
+#
 # MONGODB_URI = 'mongodb://127.0.0.1:27017'
 # MONGODB_DATABASE = 'scrapy'
-# MONGODB_COLLECTION = 'test1'
-
+# MONGODB_COLLECTION = 'google'
+#
 # EXTENSIONS = {'scrapy.contrib.feedexport.FeedExporter': None}
+
+FEED_URI = u'file:/Users/noprom/Documents/Dev/Python/Pro/apps-crawer/data/apps.json'#文件保存路径
+FEED_FORMAT = 'json'#保存为json文件

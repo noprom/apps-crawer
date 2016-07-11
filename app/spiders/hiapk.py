@@ -6,7 +6,6 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.contrib.linkextractors import LinkExtractor
 from app.items import HiapkItem
 
-
 class HiapkSpider(CrawlSpider):
     name = "hiapk"
     allowed_domains = ["hiapk.com"]
@@ -18,13 +17,12 @@ class HiapkSpider(CrawlSpider):
     	'http://apk.hiapk.com/apps/Productivity',
     	'http://apk.hiapk.com/apps/Productivity?sort=5&pi=7'
     ]
+
     rules = [
         Rule(LinkExtractor(allow=("http://apk\.hiapk\.com/appinfo/", )), callback='parse_app',follow=True),
         Rule(LinkExtractor(allow=("http://apk\.hiapk\.com/apps?sort=\d+&pi=\d+", )), callback='parse',follow=True),
         Rule(LinkExtractor(allow=("http://apk\.hiapk\.com/apps", )), callback='parse',follow=True),
     ]
-
-
 
     def parse_app(self, response):
         item = HiapkItem()

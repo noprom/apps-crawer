@@ -7,7 +7,6 @@
 
 import scrapy
 
-
 class AppItem(scrapy.Item):
     apk_url  = scrapy.Field()
     name     = scrapy.Field()
@@ -18,14 +17,26 @@ class AppItem(scrapy.Item):
     screenshots  = scrapy.Field()
     download_num = scrapy.Field()
 
+class GoogleItem(scrapy.Item):
+    url = scrapy.Field()
+    num = scrapy.Field()
 
 class GoogleItem(scrapy.Item):
- 	url = scrapy.Field()
- 	num = scrapy.Field()
-
+    url = scrapy.Field()
+    app_name = scrapy.Field()
+    developer = scrapy.Field()
+    package = scrapy.Field()
+    category = scrapy.Field()
 
 class HiapkItem(scrapy.Item):
-	url = scrapy.Field()
-	name = scrapy.Field()
-	info = scrapy.Field()
-	apk_url = scrapy.Field()
+    url = scrapy.Field()
+    name = scrapy.Field()
+    info = scrapy.Field()
+    apk_url = scrapy.Field()
+
+class XiaomiItem(scrapy.Item):
+    url = scrapy.Field()
+    app_name = scrapy.Field()
+    developer = scrapy.Field()
+    package = scrapy.Field()
+    category = scrapy.Field()

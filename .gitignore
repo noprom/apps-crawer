@@ -1,5 +1,4 @@
-
-#********** python template********** 
+#********** python template**********
 .idea
 *.py[cod]
 
@@ -50,4 +49,5 @@ app/jobs/*
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
- 
+*.pyc
+*.json
