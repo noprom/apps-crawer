@@ -16,6 +16,7 @@ NEWSPIDER_MODULE = 'app.spiders'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'app (+http://www.yourdomain.com)'
 
+# 保存到mongodb配置
 # ITEM_PIPELINES = [
 #   'scrapy_mongodb.MongoDBPipeline',
 # ]
@@ -27,5 +28,9 @@ NEWSPIDER_MODULE = 'app.spiders'
 #
 # EXTENSIONS = {'scrapy.contrib.feedexport.FeedExporter': None}
 
-FEED_URI = u'file:/Users/noprom/Documents/Dev/Python/Pro/apps-crawer/data/apps.json'#文件保存路径
-FEED_FORMAT = 'json'#保存为json文件
+
+# 保存到文件配置
+ITEM_PIPELINES = {
+    'app.pipelines.JsonWithEncodingHiApkPipeline': 500,
+}
+LOG_LEVEL = 'INFO'

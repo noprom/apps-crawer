@@ -27,7 +27,8 @@ class HiapkSpider(CrawlSpider):
     def parse_app(self, response):
         item = HiapkItem()
         item['url'] = response.url
-        item['info'] =  response.css(".line_content > span").xpath("text()").extract()
-        item['apk_url'] = 'http://apk.hiapk.com' + response.css("#appInfoDownUrl").xpath("@href").extract()[0]
-        item['name'] = response.css("#appSoftName").xpath("text()").extract()[0]
+        item['app_name'] = response.css("#appSoftName").xpath("text()").extract()[0]
+        item['developer'] = response.xpath("//div[@class='d_u_line']").xpath("text()").extract()
+        item['package'] = response.url.split("/")[-2]
+        item['category'] = response.xpath("//a[@id='categoryLink']").xpath("text()").extract()
         yield item
