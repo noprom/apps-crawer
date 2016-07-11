@@ -23,3 +23,10 @@ class GoogleItem(scrapy.Item):
     developer = scrapy.Field()
     package = scrapy.Field()
     category = scrapy.Field()
+
+class XiaomiItem(scrapy.Item):
+    url = scrapy.Field()
+    app_name = scrapy.Field()
+    developer = scrapy.Field()
+    package = scrapy.Field()
+    category = scrapy.Field()

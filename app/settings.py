@@ -26,3 +26,6 @@ NEWSPIDER_MODULE = 'app.spiders'
 # MONGODB_COLLECTION = 'google'
 #
 # EXTENSIONS = {'scrapy.contrib.feedexport.FeedExporter': None}
+
+FEED_URI = u'file:/Users/noprom/Documents/Dev/Python/Pro/apps-crawer/data/apps.json'#文件保存路径
+FEED_FORMAT = 'json'#保存为CSV文件
