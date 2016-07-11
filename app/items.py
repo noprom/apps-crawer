@@ -30,3 +30,9 @@ class XiaomiItem(scrapy.Item):
     developer = scrapy.Field()
     package = scrapy.Field()
     category = scrapy.Field()
+
+class HiapkItem(scrapy.Item):
+	url = scrapy.Field()
+	name = scrapy.Field()
+	info = scrapy.Field()
+	apk_url = scrapy.Field()
